@@ -1,4 +1,10 @@
 {
   "BOT_TOKEN": "",
-  "PERMISSIONS_ROLE_ID": ""
+  "FIVEGUARD_RESOURCE_NAME": "",
+  "PERMISSIONS_ROLE_ID": "",
+  "SERVER_STATUS": {
+    "ON": false,
+    "SERVER_PORT": "30120",
+    "MESSAGE": "<count> players on ExampleRP"
+  }
 }
