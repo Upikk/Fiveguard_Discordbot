@@ -7,41 +7,47 @@ module.exports = {
     .addNumberOption((option) =>
       option
         .setName("banid")
-        .setDescription("Enter the Player's BanID to unban")
+        .setDescription("Enter the Player's BanID get Info")
         .setRequired(true)
     ),
   async execute(interaction, client) {
     const banid = interaction.options.getNumber("banid");
-    const result = client.fg.GetBanInfoId(banid);
-    if (result) {
-      interaction.reply({
-        embeds: [
-          new EmbedBuilder()
-            .setColor("Green")
-            .setAuthor({
-              name: client.user.username,
-              iconURL: client.user.avatarURL(),
-            })
-            .setTimestamp()
-            .setTitle(`Ban Information for ID: ${banid}`)
-            .setDescription(
-              `**Name: \`${result.name}\`\n\nReason: \`${result.reason}\`\n\nManual: \`${result.manual}\`\n\nDiscord: \`${result.discord}\`\n\nLicense: \`${result.license}\`\n\nSteam: \`${result.steam}\`**`
-            ),
-        ],
-      });
-    } else {
-      interaction.reply({
-        embeds: [
-          new EmbedBuilder()
-            .setColor("Red")
-            .setAuthor({
-              name: client.user.username,
-              iconURL: client.user.avatarURL(),
-            })
-            .setTimestamp()
-            .setDescription("**Incorrect Ban ID provided**"),
-        ],
-      });
-    }
+    const { createConnection } = require("mysql");
+    const conn = createConnection({
+      host: "127.0.0.1",
+      password: "Pass",
+      database: "dbname",
+    });
+    conn.query("SELECT * FROM dbname WHERE id = ?", [banid], (err, result) => {
+      if (result) {
+        interaction.reply({
+          embeds: [
+            new EmbedBuilder()
+              .setColor("Green")
+              .setAuthor({
+                name: client.user.username,
+                iconURL: client.user.avatarURL(),
+              })
+              .setTimestamp()
+              .setTitle(`Ban Information for ID: ${banid}`)
+              .setDescription(`Results`),
+          ],
+        });
+      } else {
+        interaction.reply({
+          embeds: [
+            new EmbedBuilder()
+
+              .setColor("Red")
+              .setAuthor({
+                name: client.user.username,
+                iconURL: client.user.avatarURL(),
+              })
+              .setTimestamp()
+              .setDescription("**Incorrect Ban ID provided**"),
+          ],
+        });
+      }
+    });
   },
 };

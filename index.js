@@ -1,8 +1,6 @@
 const { Client, Collection } = require("discord.js");
 const config = require("./config.json");
 
-const fg = exports[config.FIVEGUARD_RESOURCE_NAME];
-
 if (config.BOT_TOKEN == "") {
   console.log("YOU'RE MISSING BOT TOKEN");
 } else if (config.FIVEGUARD_RESOURCE_NAME == "") {
