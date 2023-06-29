@@ -1,11 +1,15 @@
 const { Client, Collection } = require("discord.js");
 const config = require("./config.json");
 
+const fg = exports[config.FIVEGUARD_RESOURCE_NAME];
+
 if (config.BOT_TOKEN == "") {
   console.log("YOU'RE MISSING BOT TOKEN");
-} else if (config.FIVEGUARD_RESOURCE_NAME == "") {
+}
+if (config.FIVEGUARD_RESOURCE_NAME == "") {
   console.log("YOU'RE MISSING FIVEGUARD RESOURCE NAME");
-} else if (config.PERMISSIONS_ROLE_ID == "") {
+}
+if (config.PERMISSIONS_ROLE_ID == "") {
   console.log("YOU'RE MISSING PERMISSION ROLE ID");
 }
 
