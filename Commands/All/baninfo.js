@@ -11,43 +11,46 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction, client) {
+    const { PERMISSIONS_ROLE_ID } = require("../../config.json");
+    if (!interaction.member.roles.cache.has(PERMISSIONS_ROLE_ID))
+      return interaction.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setColor("Red")
+            .setTimestamp()
+            .setDescription("You don't have permissions to use this Command!"),
+        ],
+      });
     const banid = interaction.options.getNumber("banid");
-    const { createConnection } = require("mysql");
-    const conn = createConnection({
-      host: "127.0.0.1",
-      password: "Pass",
-      database: "dbname",
-    });
-    conn.query("SELECT * FROM dbname WHERE id = ?", [banid], (err, result) => {
-      if (result) {
-        interaction.reply({
-          embeds: [
-            new EmbedBuilder()
-              .setColor("Green")
-              .setAuthor({
-                name: client.user.username,
-                iconURL: client.user.avatarURL(),
-              })
-              .setTimestamp()
-              .setTitle(`Ban Information for ID: ${banid}`)
-              .setDescription(`Results`),
-          ],
-        });
-      } else {
-        interaction.reply({
-          embeds: [
-            new EmbedBuilder()
+    const result = client.fg.GetBanInfoId(banid);
+    if (result) {
+      interaction.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setColor("Green")
+            .setAuthor({
+              name: client.user.username,
+              iconURL: client.user.avatarURL(),
+            })
+            .setTimestamp()
+            .setTitle(`Ban Information for ID: ${banid}`)
+            .setDescription(`Results`),
+        ],
+      });
+    } else {
+      interaction.reply({
+        embeds: [
+          new EmbedBuilder()
 
-              .setColor("Red")
-              .setAuthor({
-                name: client.user.username,
-                iconURL: client.user.avatarURL(),
-              })
-              .setTimestamp()
-              .setDescription("**Incorrect Ban ID provided**"),
-          ],
-        });
-      }
-    });
+            .setColor("Red")
+            .setAuthor({
+              name: client.user.username,
+              iconURL: client.user.avatarURL(),
+            })
+            .setTimestamp()
+            .setDescription("**Incorrect Ban ID provided**"),
+        ],
+      });
+    }
   },
 };
