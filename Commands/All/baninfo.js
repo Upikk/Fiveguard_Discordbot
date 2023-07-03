@@ -19,7 +19,7 @@ module.exports = {
             .setColor("Red")
             .setTimestamp()
             .setDescription(
-              `**Name: \`${result.name}\`\n\nReason: \`${result.reason}\`\n\nManual: \`${result.manual}\`\n\nDiscord: \`${result.discord}\`\n\nLicense: \`${result.license}\`\n\nSteam: \`${result.steam}\`**`
+              `You don't have permissions to use this Command!`
             ),
         ],
       });
@@ -36,7 +36,7 @@ module.exports = {
             })
             .setTimestamp()
             .setTitle(`Ban Information for ID: ${banid}`)
-            .setDescription(`Results`),
+            .setDescription(`**Name: \`${result.name}\`\n\nReason: \`${result.reason}\`\n\nManual: \`${result.manual}\`\n\nDiscord: \`${result.discord}\`\n\nLicense: \`${result.license}\`\n\nSteam: \`${result.steam}\`**`),
         ],
       });
     } else {
