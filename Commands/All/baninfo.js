@@ -18,7 +18,9 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command!"),
+            .setDescription(
+              `**Name: \`${result.name}\`\n\nReason: \`${result.reason}\`\n\nManual: \`${result.manual}\`\n\nDiscord: \`${result.discord}\`\n\nLicense: \`${result.license}\`\n\nSteam: \`${result.steam}\`**`
+            ),
         ],
       });
     const banid = interaction.options.getNumber("banid");
