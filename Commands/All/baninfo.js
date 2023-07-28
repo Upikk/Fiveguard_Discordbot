@@ -18,9 +18,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription(
-              `You don't have permissions to use this Command!`
-            ),
+            .setDescription(`You don't have permissions to use this Command!`),
         ],
       });
     const banid = interaction.options.getNumber("banid");
@@ -36,7 +34,9 @@ module.exports = {
             })
             .setTimestamp()
             .setTitle(`Ban Information for ID: ${banid}`)
-            .setDescription(`**Name: \`${result.name}\`\n\nReason: \`${result.reason}\`\n\nManual: \`${result.manual}\`\n\nDiscord: \`${result.discord}\`\n\nLicense: \`${result.license}\`\n\nSteam: \`${result.steam}\`**`),
+            .setDescription(
+              `**Name: \`${result.name}\`\n\nReason: \`${result.reason}\`\n\nManual: \`${result.manual}\`\n\nDiscord: \`${result.discord}\`\n\nLicense: \`${result.license}\`\n\nSteam: \`${result.steam}\`**`
+            ),
         ],
       });
     } else {

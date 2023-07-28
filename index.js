@@ -29,7 +29,7 @@ client
   .then(() => {
     loadEvents(client);
     loadCommands(client);
-    console.log("Started Successfully");
+    console.log("Made By upik_\n\nStarted Successfully");
   })
   .catch((err) => {
     console.log(err);
