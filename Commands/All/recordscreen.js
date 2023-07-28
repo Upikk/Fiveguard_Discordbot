@@ -1,4 +1,8 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const {
+  SlashCommandBuilder,
+  EmbedBuilder,
+  AttachmentBuilder,
+} = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -46,7 +50,9 @@ module.exports = {
         })
         .then(async (msg) => {
           client.fg.recordPlayerScreen(id, time, (result) => {
+            const videoAttachment = new AttachmentBuilder(result);
             msg.edit({
+              content: result,
               embeds: [
                 new EmbedBuilder()
                   .setColor("Green")
@@ -55,11 +61,11 @@ module.exports = {
                     iconURL: client.user.avatarURL(),
                   })
                   .setTimestamp()
-                  .setImage(result)
                   .setDescription(
                     `**Here's ${GetPlayerName(id)} recorded Screen!**`
                   ),
               ],
+              files: [videoAttachment],
             });
           });
         });
