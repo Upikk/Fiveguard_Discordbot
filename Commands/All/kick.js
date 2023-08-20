@@ -17,6 +17,16 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction, client) {
+    const { PERMISSIONS_ROLE_ID } = require("../../config.json");
+    if (!interaction.member.roles.cache.has(PERMISSIONS_ROLE_ID)) //Add security check
+      return interaction.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setColor("Red")
+            .setTimestamp()
+            .setDescription("You don't have permissions to use this Command!"),
+        ],
+      });
     const id = interaction.options.getNumber("id");
     const reason = interaction.options.getString("reason");
     if (!GetPlayerName(id))
