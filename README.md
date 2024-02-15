@@ -7,3 +7,8 @@ config.json:
 - FiveGuard resource name
 - Permission Role ID (with this role, member can use ban and unban commands)
 - Server Status (shows your current player count in the bot Activity)
+
+# Configuration
+1. 
+
+<br>If you want to purchase custom bot with functions like revive, kill etc dm me on discord: upik_</br>!
