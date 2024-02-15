@@ -11,4 +11,4 @@ config.json:
 # Configuration
 1. 
 
-<br>If you want to purchase custom bot with functions like revive, kill etc dm me on discord: upik_</br>!
+<b>If you want to purchase custom bot with functions like revive, kill etc dm me on discord: upik_</b>!
