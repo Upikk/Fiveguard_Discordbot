@@ -11,7 +11,7 @@ config.json:
 
 # Configuration
 1. Download Script
-2. Go to [https://discord.com/developers/applications](Discord Developer Portal) and get your bot Token
+2. Go to https://discord.com/developers/applications and get your bot Token
 3. Put your token in config.json
 4. If you have yarn, remove it from your server
 5. Add <b>ensure Fiveguard_Discordbot</b> to your server.cfg
