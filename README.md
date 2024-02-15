@@ -2,7 +2,7 @@ Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban
 
 <b>discord: upik_</b>
 
-config.json:
+# config.json:
 
 - Bot Token (token from discord.com/developers/applications)
 - FiveGuard resource 
