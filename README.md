@@ -1,4 +1,4 @@
-Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban / Baninfo / Kick / Offlineban functions
+Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban / Baninfo / Kick functions
 i added fivem server status too
 
 config.json:
