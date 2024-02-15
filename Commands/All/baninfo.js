@@ -11,16 +11,20 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS_ROLE_ID } = require("../../config.json");
-    if (!interaction.member.roles.cache.has(PERMISSIONS_ROLE_ID))
+    const { PERMISSIONS } = require("../../config.json");
+    const roles = PERMISSIONS.BANINFO;
+    const memberRoles = interaction.member.roles.cache.map((role) => role.id);
+
+    if (!roles.some((roleId) => memberRoles.includes(roleId))) {
       return interaction.reply({
         embeds: [
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription(`You don't have permissions to use this Command!`),
+            .setDescription("You don't have permissions to use this Command"),
         ],
       });
+    }
     const banid = interaction.options.getNumber("banid");
     const result = client.fg.GetBanInfoId(banid);
     if (result) {

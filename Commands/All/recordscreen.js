@@ -18,20 +18,20 @@ module.exports = {
       option.setName("time").setDescription("Time in Seconds").setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS_ROLE_ID } = require("../../config.json");
-    if (!interaction.member.roles.cache.has(PERMISSIONS_ROLE_ID))
+    const { PERMISSIONS } = require("../../config.json");
+    const roles = PERMISSIONS.RECORDSCREEN;
+    const memberRoles = interaction.member.roles.cache.map((role) => role.id);
+
+    if (!roles.some((roleId) => memberRoles.includes(roleId))) {
       return interaction.reply({
         embeds: [
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setAuthor({
-              name: client.user.username,
-              iconURL: client.user.avatarURL(),
-            })
-            .setDescription("You don't have permissions to use this Command!"),
+            .setDescription("You don't have permissions to use this Command"),
         ],
       });
+    }
     const id = interaction.options.getNumber("id");
     const time = interaction.options.getNumber("time") * 1000;
     if (GetPlayerName(id)) {
