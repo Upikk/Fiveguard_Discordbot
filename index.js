@@ -4,29 +4,7 @@ const fs = require("fs");
 const root = GetResourcePath(GetCurrentResourceName());
 
 if (!fs.existsSync(`${root}/node_modules`)) {
-  const fs = require("fs");
-  const { exec } = require("child_process");
-  const tarFilePath = `${root}/modules.tar`;
-  const extractDir = `${root}/`;
-  if (!fs.existsSync(extractDir)) {
-    fs.mkdirSync(extractDir);
-  }
-  exec(
-    `tar -xf "${tarFilePath}" -C "${extractDir}"`,
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error extracting tar file: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-      }
-      console.log(
-        `Successfully installed Modules to ${extractDir}\n\n⚠ Restart the Script! ⚠`
-      );
-    }
-  );
+  console.log("You didn't put node_modules from https://github.com/Upikk/Fiveguard_Discordbot in the Fiveguard_Discordbot Script Destination!")
 } else {
   const fg = exports[config.FIVEGUARD_RESOURCE_NAME];
 
