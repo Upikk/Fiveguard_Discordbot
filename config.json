@@ -14,5 +14,65 @@
     "RECORDSCREEN": ["111111111111111111", "222222222222222222"],
     "SCREENSHOT": ["111111111111111111", "222222222222222222"],
     "UNBAN": ["111111111111111111", "222222222222222222"]
+  },
+  "SHOW_LOADED_INFO": true,
+  "FRAMEWORK": "ESX",
+  "GUILD_ID": "1115607105450299492",
+  "IN_GAME_PERMISSIONS": {
+    "1115696595024718631": {
+      "AdminMenu": [
+        "AdminMenuAccess",
+        "AnnouncementAccess",
+        "ESPAccess",
+        "ClearEntitiesAccess",
+        "BanAndKickAccess",
+        "GotoAndBringAccess",
+        "VehicleAccess",
+        "MiscAccess",
+        "LogsAccess",
+        "PlayerSelectorAccess",
+        "BanListAndUnbanAccess",
+        "ModelChangerAccess"
+      ],
+      "Client": [
+        "BypassSpectate",
+        "BypassGodMode",
+        "BypassInvisible",
+        "BypassStealOutfit",
+        "BypassInfStamina",
+        "BypassNoclip",
+        "BypassSuperJump",
+        "BypassFreecam",
+        "BypassSpeedHack",
+        "BypassTeleport",
+        "BypassNightVision",
+        "BypassThermalVision",
+        "BypassOCR",
+        "BypassNuiDevtools",
+        "BypassBlacklistedTextures",
+        "BlipsBypass",
+        "BypassCbScanner"
+      ],
+      "Weapon": [
+        "BypassWeaponDmgModifier",
+        "BypassInfAmmo",
+        "BypassNoReload",
+        "BypassRapidFire"
+      ],
+      "Vehicle": [
+        "BypassVehicleFixAndGodMode",
+        "BypassVehicleHandlingEdit",
+        "BypassVehicleModifier",
+        "BypassBulletproofTires"
+      ],
+      "Blacklist": ["BypassModelChanger", "BypassWeaponBlacklist"],
+      "Misc": [
+        "FGCommands",
+        "BypassVPN",
+        "BypassExplosion",
+        "BypassClearTasks",
+        "BypassParticle"
+      ]
+    }
   }
 }
