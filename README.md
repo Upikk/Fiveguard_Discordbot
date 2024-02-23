@@ -13,7 +13,7 @@ Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban
 1. Download Script and modules: https://www.mediafire.com/file/bk75ai840ywsq0l/node_modules.rar/file (put them in the bot script)
 2. Go to https://discord.com/developers/applications and get your bot Token
 3. Put your token in config.json
-4. If you have yarn, remove it from your server
+4. If you have yarn, remove it from your server (it won't affect your scripts that have modules installed already)
 5. Add <b>ensure Fiveguard_Discordbot</b> to your server.cfg
 6. Restart the Server.
 7. Done!
