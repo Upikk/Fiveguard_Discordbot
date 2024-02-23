@@ -29,8 +29,7 @@ module.exports = {
               (category) => {
                 config.IN_GAME_PERMISSIONS[roleId][category].forEach(
                   (permission) => {
-                    let res,
-                      text = client.fg.SetTempPermission(
+                    client.fg.SetTempPermission(
                         source,
                         category,
                         permission,
