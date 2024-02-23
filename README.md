@@ -18,3 +18,5 @@ Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban
 6. Restart the Server.
 7. Done!
 
+if you want to use in game permissions, put your discord role id here:
+![image](https://github.com/Upikk/Fiveguard_Discordbot/assets/96323919/024d6e3c-806c-43c4-8b03-2386714682a7)
