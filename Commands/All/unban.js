@@ -10,7 +10,7 @@ module.exports = {
         .setDescription("Enter the Player's BanID to unban")
         .setRequired(true)
     ),
-  async execute(interaction) {
+  async execute(interaction, client) {
     const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.UNBAN;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
