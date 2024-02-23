@@ -73,6 +73,14 @@
         "BypassClearTasks",
         "BypassParticle"
       ]
+    },
+    "ANOTHER_ROLE_ID": {
+      "Client": [
+        "BypassNoclip",
+        "BypassThermalVision",
+        "BypassOCR",
+        "BypassNuiDevtools"
+      ]
     }
   }
 }
