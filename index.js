@@ -45,9 +45,10 @@ if (!fs.existsSync(`${root}/node_modules`)) {
       res.on("end", () => {
         const jsonData = JSON.parse(data);
         const version = jsonData.version;
+        const changelog = jsonData.changelog;
         if (version !== v)
           return console.log(
-            `^3New update is Available!\n\nLatest Version: ${version}\nYour Version: ${v}\n\nIt's recommended to use Latest Version of the Bot^7`
+            `^3New update is Available!\n\nLatest Version: ${version}\nYour Version: ${v}\n\nChangelog: ${changelog}\n\nIt's recommended to use Latest Version of the Bot^7`
           );
         console.log(`You're using latest version: ${version}!`);
       });
