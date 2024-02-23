@@ -1,7 +1,6 @@
 {
   "BOT_TOKEN": "",
   "FIVEGUARD_RESOURCE_NAME": "",
-  "PERMISSIONS_ROLE_ID": "",
   "SERVER_STATUS": {
     "ON": false,
     "SERVER_PORT": "30120",
