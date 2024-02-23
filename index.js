@@ -18,8 +18,6 @@ if (!fs.existsSync(`${root}/node_modules`)) {
   if (!GetResourcePath(config.FIVEGUARD_RESOURCE_NAME))
     console.log("YOU PROVIDED WRONG FIVEGUARD RESOURCE NAME");
 
-  if (config.PERMISSIONS_ROLE_ID == "")
-    console.log("YOU'RE MISSING PERMISSION ROLE ID");
   if (
     !fs.existsSync(
       `${GetResourcePath(
