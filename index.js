@@ -26,8 +26,9 @@ if (!fs.existsSync(`${root}/node_modules`)) {
     console.log("PROVIDED RESOURCE NAME IS NOT A FIVEGUARD ANTICHEAT");
 
   const client = new Client({
-    intents: [1],
+    intents: [259],
   });
+  
   const { loadEvents } = require(`${root}/Handlers/eventHandler`);
   const { loadCommands } = require(`${root}/Handlers/commandHandler`);
 
