@@ -2,9 +2,13 @@ const { Client, Collection } = require("discord.js");
 const config = require("./config.json");
 const fs = require("fs");
 const root = GetResourcePath(GetCurrentResourceName());
+const p = require("./package.json");
+const v = p.version;
 
 if (!fs.existsSync(`${root}/node_modules`)) {
-  console.log("You didn't put node_modules from https://github.com/Upikk/Fiveguard_Discordbot in the Fiveguard_Discordbot Script Destination!")
+  console.log(
+    "You didn't put node_modules from https://github.com/Upikk/Fiveguard_Discordbot in the Fiveguard_Discordbot Script Destination!"
+  );
 } else {
   const fg = exports[config.FIVEGUARD_RESOURCE_NAME];
 
@@ -28,7 +32,28 @@ if (!fs.existsSync(`${root}/node_modules`)) {
   const client = new Client({
     intents: [259],
   });
-  
+
+  async function checkVer() {
+    const https = require("https");
+    const url =
+      "https://raw.githubusercontent.com/Upikk/Fiveguard_Discordbot/master/version.json";
+    https.get(url, (res) => {
+      let data = "";
+      res.on("data", (chunk) => {
+        data += chunk;
+      });
+      res.on("end", () => {
+        const jsonData = JSON.parse(data);
+        const version = jsonData.version;
+        if (version !== v)
+          return console.log(
+            `^3New update is Available!\n\nLatest Version: ${version}\nYour Version: ${v}\n\nIt's recommended to use Latest Version of the Bot^7`
+          );
+        console.log(`You're using latest version: ${version}!`);
+      });
+    });
+  }
+
   const { loadEvents } = require(`${root}/Handlers/eventHandler`);
   const { loadCommands } = require(`${root}/Handlers/commandHandler`);
 
@@ -44,6 +69,7 @@ if (!fs.existsSync(`${root}/node_modules`)) {
       console.log(
         "\n\nMade By upik_\n\n^3If you want to purchase Custom Bot with functions like revive, kill etc dm me on discord: upik_^7\n\nStarted Successfully\n\n"
       );
+      checkVer();
     })
     .catch(() => {});
 }
