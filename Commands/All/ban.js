@@ -22,7 +22,7 @@ module.exports = {
         .setDescription("Send ban to logs?")
         .setRequired(true)
     ),
-  async execute(interaction) {
+  async execute(interaction, client) {
     const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.BAN;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
