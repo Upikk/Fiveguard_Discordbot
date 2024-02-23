@@ -37,10 +37,6 @@ module.exports = {
                         true,
                         true
                       );
-                    if (!res && text)
-                      console.error(
-                        `Error while Setting Permission ${permission}: ${text}`
-                      );
                   }
                 );
               }
