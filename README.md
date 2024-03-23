@@ -1,6 +1,6 @@
 Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban / Baninfo / Kick functions and i added fivem server status too
 
-<b>If you want to purchase custom bot with functions like revive, kill etc dm me on discord: upik_</b>!
+<b>If you're interested in acquiring a custom bot equipped with specific functions, you can easily make the purchase by clicking [here](https://echolink-scripts.tebex.io/category/fivem-discord-bots).</b>!
 
 # config.json:
 
