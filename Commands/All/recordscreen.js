@@ -4,21 +4,25 @@ const {
   AttachmentBuilder,
 } = require("discord.js");
 
+const { PERMISSIONS, LANGUAGE } = require("../../config.json");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("recordscreen")
-    .setDescription("Record player's Screen")
+    .setDescription(LANGUAGE.RECORDSCREEN.DESCRIPTION)
     .addNumberOption((option) =>
       option
         .setName("id")
-        .setDescription("Enter the Player's ID")
+        .setDescription(LANGUAGE.RECORDSCREEN.OPTIONS.ID.DESCRIPTION)
         .setRequired(true)
     )
     .addNumberOption((option) =>
-      option.setName("time").setDescription("Time in Seconds").setRequired(true)
+      option
+        .setName("time")
+        .setDescription(LANGUAGE.RECORDSCREEN.OPTIONS.TIME.DESCRIPTION)
+        .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.RECORDSCREEN;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
 
@@ -28,7 +32,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command"),
+            .setDescription(LANGUAGE.NO_PERMISSION_INFO),
         ],
       });
     }
@@ -45,7 +49,7 @@ module.exports = {
                 iconURL: client.user.avatarURL(),
               })
               .setTimestamp()
-              .setDescription(`**Recording screen, this may take a While!**`),
+              .setDescription(LANGUAGE.RECORDSCREEN.SUCCESS_MESSAGE),
           ],
         })
         .then(async (msg) => {
@@ -79,7 +83,7 @@ module.exports = {
             })
             .setColor("Red")
             .setTimestamp()
-            .setDescription("**Incorrect ID has been Provided!**"),
+            .setDescription(LANGUAGE.INVALID_ID_INFO),
         ],
       });
     }

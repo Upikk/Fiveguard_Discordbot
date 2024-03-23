@@ -5,13 +5,14 @@ Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban
 # config.json:
 
 - Bot Token (token from discord.com/developers/applications)
-- FiveGuard resource 
+- FiveGuard resource
 - Server Status (shows your current player count in the bot Activity)
 - Discord Permissions (You need to configure which role will have access to the Command)
+- Translation
 - Fiveguard Permissions (if you want to use Discord Roles with Fiveguard Permissions)
 
-
 # Configuration
+
 1. Download Script and modules: https://www.mediafire.com/file/bk75ai840ywsq0l/node_modules.rar/file (put them in the bot script)
 2. Go to https://discord.com/developers/applications and get your bot Token
 3. Put your token in config.json

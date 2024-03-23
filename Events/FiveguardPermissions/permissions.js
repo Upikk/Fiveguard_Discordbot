@@ -14,9 +14,8 @@ module.exports = {
             `Player: ${source} Doesn't Have Discord Identifier!`
           );
         const d = discord.replace("discord:", "");
-        if (config.GUILD_ID == "" && config.USE_ROLES_PERMISSIONS)
-          return console.error("You didn't set your Guild ID in config.json!");
         const g = await client.guilds.cache.get(config.GUILD_ID);
+        if (!g) return console.error("You put Wrong Guild ID in config.json!");
         const member = await g.members.cache.get(d);
         const memberRoles = member.roles.cache.map((role) => role.id);
         Object.keys(config.IN_GAME_PERMISSIONS).some((roleId) => {
@@ -30,12 +29,12 @@ module.exports = {
                 config.IN_GAME_PERMISSIONS[roleId][category].forEach(
                   (permission) => {
                     client.fg.SetTempPermission(
-                        source,
-                        category,
-                        permission,
-                        true,
-                        true
-                      );
+                      source,
+                      category,
+                      permission,
+                      true,
+                      true
+                    );
                   }
                 );
               }

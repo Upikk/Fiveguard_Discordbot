@@ -1,23 +1,24 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
+const { PERMISSIONS, LANGUAGE } = require("../../config.json");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("kick")
-    .setDescription("Kick Player")
+    .setDescription(LANGUAGE.KICK.DESCRIPTION)
     .addNumberOption((option) =>
       option
         .setName("id")
-        .setDescription("Enter the Player's ID to Kick")
+        .setDescription(LANGUAGE.KICK.OPTIONS.ID.DESCRIPTION)
         .setRequired(true)
     )
     .addStringOption((option) =>
       option
         .setName("reason")
-        .setDescription("Enter the Kick Reason")
+        .setDescription(LANGUAGE.KICK.OPTIONS.REASON.DESCRIPTION)
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.KICK;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
 
@@ -27,7 +28,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command"),
+            .setDescription(LANGUAGE.NO_PERMISSION_INFO),
         ],
       });
     }
@@ -43,7 +44,7 @@ module.exports = {
               iconURL: client.user.avatarURL(),
             })
             .setTimestamp()
-            .setDescription("**Invalid ID provided!**"),
+            .setDescription(LANGUAGE.INVALID_ID_INFO),
         ],
       });
     interaction.reply({

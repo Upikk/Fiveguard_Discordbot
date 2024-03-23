@@ -1,17 +1,18 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
+const { PERMISSIONS, LANGUAGE } = require("../../config.json");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("unban")
-    .setDescription("Unban a Player")
+    .setDescription(LANGUAGE.UNBAN.DESCRIPTION)
     .addNumberOption((option) =>
       option
         .setName("banid")
-        .setDescription("Enter the Player's BanID to unban")
+        .setDescription(LANGUAGE.UNBAN.OPTIONS.BANID.DESCRIPTION)
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.UNBAN;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
 
@@ -21,7 +22,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command"),
+            .setDescription(LANGUAGE.NO_PERMISSION_INFO),
         ],
       });
     }
@@ -50,7 +51,7 @@ module.exports = {
             })
             .setColor("Red")
             .setTimestamp()
-            .setDescription("**Player is not Banned!**"),
+            .setDescription(LANGUAGE.UNBAN.ERROR_MESSAGE),
         ],
       });
     }

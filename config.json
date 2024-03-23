@@ -14,6 +14,69 @@
     "SCREENSHOT": ["111111111111111111", "222222222222222222"],
     "UNBAN": ["111111111111111111", "222222222222222222"]
   },
+  "LANGUAGE": {
+    "NO_PERMISSION_INFO": "You don't have permissions to use this Command",
+    "INVALID_ID_INFO": "**Invalid ID provided!**",
+    "BAN": {
+      "SUCCESS_MESSAGE": "**Player has been banned!**",
+      "DESCRIPTION": "Ban a Player",
+      "OPTIONS": {
+        "ID": {
+          "DESCRIPTION": "Enter the Player's ID to ban"
+        },
+        "REASON": {
+          "DESCRIPTION": "Enter the ban reason"
+        },
+        "LOG": {
+          "DESCRIPTION": "Send ban to logs?"
+        }
+      }
+    },
+    "BANINFO": {
+      "DESCRIPTION": "Enter the Player's BanID get Info"
+    },
+    "KICK": {
+      "DESCRIPTION": "Kick Player",
+      "OPTIONS": {
+        "ID": {
+          "DESCRIPTION": "Enter the Player's ID to Kick"
+        },
+        "REASON": {
+          "DESCRIPTION": "Enter the Kick Reason"
+        }
+      }
+    },
+    "RECORDSCREEN": {
+      "DESCRIPTION": "Record player's Screen",
+      "SUCCESS_MESSAGE": "**Recording screen, this may take a While!**",
+      "OPTIONS": {
+        "ID": {
+          "DESCRIPTION": "Enter the Player's ID"
+        },
+        "TIME": {
+          "DESCRIPTION": "Time in Seconds"
+        }
+      }
+    },
+    "SCREENSHOT": {
+      "DESCRIPTION": "Screenshot player",
+      "SUCCESS_MESSAGE": "**Screenshooting screen, this may take a While!**",
+      "OPTIONS": {
+        "ID": {
+          "DESCRIPTION": "Enter the Player's ID"
+        }
+      }
+    },
+    "UNBAN": {
+      "DESCRIPTION": "Unban a Player",
+      "ERROR_MESSAGE": "**Player is not Banned!**",
+      "OPTIONS": {
+        "BANID": {
+          "DESCRIPTION": "Enter the Player's BanID to unban"
+        }
+      }
+    }
+  },
   "USE_ROLES_PERMISSIONS": false,
   "SHOW_LOADED_INFO": false,
   "FRAMEWORK": "ESX",

@@ -1,7 +1,7 @@
-fx_version   'adamant'
+fx_version 'adamant'
 games {"gta5"}
 author "Upikk"
-description "discord.gg/upik"
+description "To purchase Server Management Discord Bot you can go here: https://echolink-scripts.tebex.io/category/fivem-discord-bots"
 lua54 'yes'
 server_only 'yes'
 

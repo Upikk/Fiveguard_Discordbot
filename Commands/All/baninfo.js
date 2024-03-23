@@ -1,5 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
+const { PERMISSIONS, LANGUAGE } = require("../../config.json");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("baninfo")
@@ -7,11 +9,10 @@ module.exports = {
     .addNumberOption((option) =>
       option
         .setName("banid")
-        .setDescription("Enter the Player's BanID get Info")
+        .setDescription(LANGUAGE.BANINFO.DESCRIPTION)
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.BANINFO;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
 
@@ -21,7 +22,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command"),
+            .setDescription(LANGUAGE.NO_PERMISSION_INFO),
         ],
       });
     }

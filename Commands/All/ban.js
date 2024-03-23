@@ -1,29 +1,30 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
+const { PERMISSIONS, LANGUAGE } = require("../../config.json");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("ban")
-    .setDescription("Ban a Player")
+    .setDescription(LANGUAGE.BAN.DESCRIPTION)
     .addNumberOption((option) =>
       option
         .setName("id")
-        .setDescription("Enter the Player's ID to ban")
+        .setDescription(LANGUAGE.BAN.OPTIONS.ID.DESCRIPTION)
         .setRequired(true)
     )
     .addStringOption((option) =>
       option
         .setName("reason")
-        .setDescription("Enter the ban reason")
+        .setDescription(LANGUAGE.BAN.OPTIONS.REASON.DESCRIPTION)
         .setRequired(true)
     )
     .addBooleanOption((option) =>
       option
         .setName("log")
-        .setDescription("Send ban to logs?")
+        .setDescription(LANGUAGE.BAN.OPTIONS.LOG.DESCRIPTION)
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.BAN;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
 
@@ -33,7 +34,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command"),
+            .setDescription(LANGUAGE.NO_PERMISSION_INFO),
         ],
       });
     }
@@ -50,7 +51,7 @@ module.exports = {
               iconURL: client.user.avatarURL(),
             })
             .setTimestamp()
-            .setDescription("**Invalid ID provided!**"),
+            .setDescription(LANGUAGE.INVALID_ID_INFO),
         ],
       });
 
@@ -64,7 +65,7 @@ module.exports = {
             name: client.user.username,
             iconURL: client.user.avatarURL(),
           })
-          .setDescription("**Player has been banned!**"),
+          .setDescription(LANGUAGE.BAN.SUCCESS_MESSAGE),
       ],
     });
   },

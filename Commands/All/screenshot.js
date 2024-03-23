@@ -1,17 +1,18 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
+const { PERMISSIONS, LANGUAGE } = require("../../config.json");
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("screenshot")
-    .setDescription("Screenshot player")
+    .setDescription(LANGUAGE.SCREENSHOT.DESCRIPTION)
     .addNumberOption((option) =>
       option
         .setName("id")
-        .setDescription("Enter the Player's ID")
+        .setDescription(LANGUAGE.SCREENSHOT.OPTIONS.ID.DESCRIPTION)
         .setRequired(true)
     ),
   async execute(interaction, client) {
-    const { PERMISSIONS } = require("../../config.json");
     const roles = PERMISSIONS.SCREENSHOT;
     const memberRoles = interaction.member.roles.cache.map((role) => role.id);
 
@@ -21,7 +22,7 @@ module.exports = {
           new EmbedBuilder()
             .setColor("Red")
             .setTimestamp()
-            .setDescription("You don't have permissions to use this Command"),
+            .setDescription(LANGUAGE.NO_PERMISSION_INFO),
         ],
       });
     }
@@ -37,9 +38,7 @@ module.exports = {
                 iconURL: client.user.avatarURL(),
               })
               .setTimestamp()
-              .setDescription(
-                `**Screenshooting screen, this may take a While!**`
-              ),
+              .setDescription(LANGUAGE.SCREENSHOT.SUCCESS_MESSAGE),
           ],
         })
         .then(async (msg) => {
@@ -71,7 +70,7 @@ module.exports = {
             })
             .setColor("Red")
             .setTimestamp()
-            .setDescription("**Incorrect ID has been Provided!**"),
+            .setDescription(LANGUAGE.INVALID_ID_INFO),
         ],
       });
     }
