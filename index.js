@@ -70,5 +70,7 @@ if (!fs.existsSync(`${root}/node_modules`)) {
       );
       checkVer();
     })
-    .catch(() => {});
+    .catch((err) => {
+      console.error(err)
+    });
 }
