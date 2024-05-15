@@ -26,10 +26,11 @@ module.exports = {
         ],
       });
     }
+    await interaction.deferReply()
     const id = interaction.options.getNumber("banid");
     const result = client.fg.UnbanId(id);
     if (result) {
-      interaction.reply({
+      await interaction.deferReply({
         embeds: [
           new EmbedBuilder()
             .setColor("Green")
@@ -42,7 +43,7 @@ module.exports = {
         ],
       });
     } else {
-      interaction.reply({
+      await interaction.deferReply({
         embeds: [
           new EmbedBuilder()
             .setAuthor({
