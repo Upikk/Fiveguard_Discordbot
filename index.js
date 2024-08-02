@@ -66,7 +66,7 @@ if (!fs.existsSync(`${root}/node_modules`)) {
       loadEvents(client);
       loadCommands(client);
       console.log(
-        "\n\nMade By upik_\n\n^3If you're interested in acquiring a Server Management Bot equipped with specific functions, you can easily make the purchase by clicking here: https://echolink-scripts.tebex.io/category/fivem-discord-bots.^7\n\nStarted Successfully\n\n"
+        "\n\nMade By upik_\n\n^3If you'd like to buy custom bot (with commands that you want) you can dm me on discord: upik_^7\n\nStarted Successfully\n\n"
       );
       checkVer();
     })
