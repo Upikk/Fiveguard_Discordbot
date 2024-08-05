@@ -10,16 +10,14 @@ Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban
 - Discord Permissions (You need to configure which role will have access to the Command)
 - Translation
 - Fiveguard Permissions (if you want to use Discord Roles with Fiveguard Permissions)
+- Revive Command (remember to change your revive trigger in Fivem/server.lua file)
 
 # Configuration
 
-1. Download Script and modules: https://www.mediafire.com/file/bk75ai840ywsq0l/node_modules.rar/file (put them in the bot script)
-2. Go to https://discord.com/developers/applications and get your bot Token
-3. Put your token in config.json
-4. If you have yarn, replace it with this reworked yarn script: https://www.mediafire.com/file/w2t5k4n5nbs3vaf/yarn.rar/file
-5. Add <b>ensure Fiveguard_Discordbot</b> to your server.cfg
-6. Restart the Server.
-7. Done!
+1. Go to https://discord.com/developers/applications and get your bot Token
+2. Put your token in config.json
+3. Add <b>ensure Fiveguard_Discordbot</b> to your server.cfg
+4. Done!
 
 if you want to use in game permissions, put your discord role id here:
 
