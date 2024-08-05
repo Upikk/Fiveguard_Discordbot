@@ -12,7 +12,8 @@
     "KICK": ["111111111111111111", "222222222222222222"],
     "RECORDSCREEN": ["111111111111111111", "222222222222222222"],
     "SCREENSHOT": ["111111111111111111", "222222222222222222"],
-    "UNBAN": ["111111111111111111", "222222222222222222"]
+    "UNBAN": ["111111111111111111", "222222222222222222"],
+    "REVIVE": ["111111111111111111", "222222222222222222"]
   },
   "LANGUAGE": {
     "NO_PERMISSION_INFO": "You don't have permissions to use this Command",
@@ -73,6 +74,15 @@
       "OPTIONS": {
         "BANID": {
           "DESCRIPTION": "Enter the Player's BanID to unban"
+        }
+      }
+    },
+    "REVIVE": {
+      "DESCRIPTION": "Revive Player",
+      "SUCCESS_MESSAGE": "**🏥 Revive Player: {name}**",
+      "OPTIONS": {
+        "ID": {
+          "DESCRIPTION": "Enter the Player's ID to revive"
         }
       }
     }

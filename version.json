@@ -1,4 +1,4 @@
 {
-  "version": "1.0.7",
-  "changelog": "Added translation in Config & Removed functions that Fiveguard isn't using Anymore."
+  "version": "1.0.8",
+  "changelog": "Added /revive and auto installation so you don't need to worry about it."
 }

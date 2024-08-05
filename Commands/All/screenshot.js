@@ -38,7 +38,7 @@ module.exports = {
                 iconURL: client.user.avatarURL(),
               })
               .setTimestamp()
-              .setDescription(LANGUAGE.SCREENSHOT.SUCCESS_MESSAGE),
+              .setDescription(LANGUAGE.REVIVE.SUCCESS_MESSAGE),
           ],
         })
         .then(async (msg) => {
