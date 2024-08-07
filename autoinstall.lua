@@ -14,11 +14,9 @@ end
 
 local oss = GetOperatingSystem()
 
-local command = (oss == "Windows" and "curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o " .. filePath .. ".tar") or
-    ("curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o " .. filePath .. ".zip")
+local command = (oss == "Windows" and "curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o " .. filePath .. ".tar") or ("curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o " .. filePath .. ".zip")
 
-local secondcommand = (oss == "Windows" and "tar -xvf " .. filePath .. ".tar -C " .. GetResourcePath(resName)) or
-    ("unzip -q " .. filePath .. ".zip -d " .. GetResourcePath(resName))
+local secondcommand = (oss == "Windows" and "tar -xvf " .. filePath .. ".tar -C " .. GetResourcePath(resName)) or ("unzip -q " .. filePath .. ".zip -d " .. GetResourcePath(resName))
 
 function InstallAndUnzip()
     print("Installing node_modules and unzipping.")
