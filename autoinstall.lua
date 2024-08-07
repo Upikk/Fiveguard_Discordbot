@@ -14,9 +14,11 @@ end
 
 local oss = GetOperatingSystem()
 
-local command = (oss == "Windows" and "curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o " .. filePath .. ".tar") or ("curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o " .. filePath .. ".zip")
+local command = (oss == "Windows" and "curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o " .. filePath .. ".tar") or
+    ("curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o " .. filePath .. ".zip")
 
-local secondcommand = (oss == "Windows" and "tar -xvf " .. filePath .. ".tar -C " .. GetResourcePath(resName)) or ("unzip -q " .. filePath .. ".zip -d " .. GetResourcePath(resName))
+local secondcommand = (oss == "Windows" and "tar -xvf " .. filePath .. ".tar -C " .. GetResourcePath(resName)) or
+    ("unzip -q " .. filePath .. ".zip -d " .. GetResourcePath(resName))
 
 function InstallAndUnzip()
     print("Installing node_modules and unzipping.")
@@ -45,9 +47,9 @@ function CheckYarn()
     for line in yarnBuilderFile:gmatch("[^\r\n]+") do
         if line:find("install time!") then
             table.insert(modifiedLines, line)
-            table.insert(modifiedLines, "        const r = GetResourcePath(resourceName);")
-            table.insert(modifiedLines, "        const f = fs.readdirSync(r);")
-            table.insert(modifiedLines, '        if (f.includes("config.lua") || f.includes("Functions")) return false;')
+            table.insert(modifiedLines, "				const r = GetResourcePath(resourceName);")
+            table.insert(modifiedLines, "				const f = fs.readdirSync(r);")
+            table.insert(modifiedLines, '				if (f.includes("config.lua") || f.includes("Functions")) return false;')
         else
             table.insert(modifiedLines, line)
         end
