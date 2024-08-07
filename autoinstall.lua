@@ -1,4 +1,6 @@
-local filePath = GetResourcePath(GetCurrentResourceName()) .. "/node_modules"
+local resName = GetCurrentResourceName()
+
+local filePath = GetResourcePath(resName) .. "/node_modules"
 
 function GetOperatingSystem()
     local osname
@@ -12,22 +14,18 @@ end
 
 local oss = GetOperatingSystem()
 
-local command = (oss == "Windows" and "curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o " .. filePath .. ".tar") or
-    ("curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o " .. filePath .. ".zip")
+local command = (oss == "Windows" and "curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o " .. filePath .. ".tar") or ("curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o " .. filePath .. ".zip")
 
-local secondcommand = (oss == "Windows" and "tar -xvf " .. filePath .. ".tar -C " .. GetResourcePath(GetCurrentResourceName())) or
-    ("unzip -q " .. filePath .. ".zip -d " .. GetResourcePath(GetCurrentResourceName()))
-
-
+local secondcommand = (oss == "Windows" and "tar -xvf " .. filePath .. ".tar -C " .. GetResourcePath(resName)) or ("unzip -q " .. filePath .. ".zip -d " .. GetResourcePath(resName))
 
 function InstallAndUnzip()
     print("Installing node_modules and unzipping.")
     os.execute(command)
     os.execute(secondcommand)
-
     os.remove(filePath .. (oss == "Windows" and ".tar" or ".zip"))
 
     CheckYarn()
+    RenamePackageJson()
     ReplaceFxManifest()
 end
 
@@ -49,8 +47,7 @@ function CheckYarn()
             table.insert(modifiedLines, line)
             table.insert(modifiedLines, "        const r = GetResourcePath(resourceName);")
             table.insert(modifiedLines, "        const f = fs.readdirSync(r);")
-            table.insert(modifiedLines,
-                '        if (f.includes("config.lua") || f.includes("Functions")) return false;')
+            table.insert(modifiedLines, '        if (f.includes("config.lua") || f.includes("Functions")) return false;')
         else
             table.insert(modifiedLines, line)
         end
@@ -70,7 +67,7 @@ function CheckYarn()
 end
 
 function ReplaceFxManifest()
-    local fxManifestPath = GetResourcePath(GetCurrentResourceName()) .. "/fxmanifest.lua"
+    local fxManifestPath = GetResourcePath(resName) .. "/fxmanifest.lua"
     local file = io.open(fxManifestPath, "r")
     if not file then
         print("Failed to open fxmanifest.lua")
@@ -88,9 +85,12 @@ function ReplaceFxManifest()
     file:write(modifiedFileContent)
     file:close()
 
-    print(
-        "Overwrited fxmanifest.lua\n\n^3Use Commands:\n> refresh\n> restart yarn\n> restart " ..
-        GetCurrentResourceName() .. "^0")
+    print("Overwrited fxmanifest.lua\n\n^3Use Commands:\n> refresh\n> restart yarn\n> restart " .. resName .. "^0")
+end
+
+function RenamePackageJson()
+    os.rename(GetResourcePath(resName) .. "/package.json.bkp", GetResourcePath(resName) .. "/package.json")
+    print("Overwrited package.json.")
 end
 
 InstallAndUnzip()
