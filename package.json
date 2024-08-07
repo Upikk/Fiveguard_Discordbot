@@ -1,5 +1,5 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.8",
   "dependencies": {
     "discord.js": "^14.11.0",
     "node-fetch": "^2.6.11"
