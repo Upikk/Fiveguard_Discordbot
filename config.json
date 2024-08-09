@@ -92,8 +92,12 @@
   "FRAMEWORK": "ESX",
   "GUILD_ID": "1111111111111111111",
   "IN_GAME_PERMISSIONS": {
-    "1111111111111111111": {
-      "AdminMenu": [
+    "ENABLED": false,
+    "SHOW_LOADED_INFO": false,
+    "FRAMEWORK": "ESX",
+    "GUILD_ID": "1111111111111111111",
+    "PERMISSIONS": {
+      "111111111111111111": [
         "AdminMenuAccess",
         "AnnouncementAccess",
         "ESPAccess",
@@ -105,9 +109,8 @@
         "LogsAccess",
         "PlayerSelectorAccess",
         "BanListAndUnbanAccess",
-        "ModelChangerAccess"
-      ],
-      "Client": [
+        "ModelChangerAccess",
+
         "BypassSpectate",
         "BypassGodMode",
         "BypassInvisible",
@@ -124,35 +127,32 @@
         "BypassNuiDevtools",
         "BypassBlacklistedTextures",
         "BlipsBypass",
-        "BypassCbScanner"
-      ],
-      "Weapon": [
+        "BypassCbScanner",
+
         "BypassWeaponDmgModifier",
         "BypassInfAmmo",
         "BypassNoReload",
-        "BypassRapidFire"
-      ],
-      "Vehicle": [
+        "BypassRapidFire",
+
         "BypassVehicleFixAndGodMode",
         "BypassVehicleHandlingEdit",
         "BypassVehicleModifier",
-        "BypassBulletproofTires"
-      ],
-      "Blacklist": ["BypassModelChanger", "BypassWeaponBlacklist"],
-      "Misc": [
+        "BypassBulletproofTires",
+
+        "BypassModelChanger",
+        "BypassWeaponBlacklist",
+
         "FGCommands",
         "BypassVPN",
         "BypassExplosion",
         "BypassClearTasks",
         "BypassParticle"
-      ]
-    },
-    "ANOTHER_ROLE_ID": {
-      "Client": [
+      ],
+      "ANOTHER_ROLE_ID": [
+        "BypassStealOutfit",
+        "BypassInfStamina",
         "BypassNoclip",
-        "BypassThermalVision",
-        "BypassOCR",
-        "BypassNuiDevtools"
+        "BypassSuperJump"
       ]
     }
   }
