@@ -91,10 +91,6 @@
       "DESCRIPTION": "Display All Bans List"
     }
   },
-  "USE_ROLES_PERMISSIONS": false,
-  "SHOW_LOADED_INFO": false,
-  "FRAMEWORK": "ESX",
-  "GUILD_ID": "1111111111111111111",
   "IN_GAME_PERMISSIONS": {
     "ENABLED": false,
     "SHOW_LOADED_INFO": false,
