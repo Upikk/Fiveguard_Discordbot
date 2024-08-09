@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const resName = "Fiveguard_Discordbot-main";
+const resName = GetCurrentResourceName();
 
 const { exec } = require("child_process");
 
