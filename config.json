@@ -86,7 +86,9 @@
         }
       }
     },
-    "BANLIST": "Display All Bans List"
+    "BANLIST": {
+      "DESCRIPTION": "Display All Bans List"
+    }
   },
   "USE_ROLES_PERMISSIONS": false,
   "SHOW_LOADED_INFO": false,
