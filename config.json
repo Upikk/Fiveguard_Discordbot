@@ -85,7 +85,8 @@
           "DESCRIPTION": "Enter the Player's ID to revive"
         }
       }
-    }
+    },
+    "BANLIST": "Display All Bans List"
   },
   "USE_ROLES_PERMISSIONS": false,
   "SHOW_LOADED_INFO": false,
