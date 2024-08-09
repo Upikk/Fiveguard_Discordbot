@@ -8,12 +8,12 @@ const {
 
 const { readFileSync } = require("fs");
 
-const { LANGUAGE, PERMISSIONS } = require("../../config.json");
+const { LANGUAGE, PERMISSIONS, FIVEGUARD_RESOURCE_NAME } = require("../../config.json");
 
-let bansjson = require("../../bans.json");
+let bansjson = JSON.parse(readFileSync(`${GetResourcePath(FIVEGUARD_RESOURCE_NAME)}/bans.json`))
 
 global.RefreshBanlistCommands = function () {
-  bansjson = JSON.parse(readFileSync("./bans.json", { encoding: "utf8" }));
+  bansjson = JSON.parse(readFileSync(`${GetResourcePath(FIVEGUARD_RESOURCE_NAME)}/bans.json`, { encoding: "utf8" }));
 };
 
 module.exports = {
