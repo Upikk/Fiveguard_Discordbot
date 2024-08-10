@@ -10,8 +10,8 @@ const OS = process.platform;
 
 const command =
   OS == "win32"
-    ? `curl -L https://github.com/Upikk/modules/raw/main/node_modules.tar -o ${filePath}.tar`
-    : `curl -L https://github.com/Upikk/modules/raw/main/node_modules.zip -o ${filePath}.zip`;
+    ? `curl -L https://github.com/Upikk/modules/raw/main/FG_DiscordBot/node_modules.tar -o ${filePath}.tar`
+    : `curl -L https://github.com/Upikk/modules/raw/main/FG_DiscordBot/node_modules.zip -o ${filePath}.zip`;
 
 const secondcommand =
   OS == "win32"
