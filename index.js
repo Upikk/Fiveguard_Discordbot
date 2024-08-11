@@ -56,11 +56,6 @@ client.commands = new Collection();
 client.events = new Collection();
 client.UserBanLists = new Map();
 
-setInterval(() => {
-  global.RefreshBanlistCommands();
-  global.RefreshBanlistEvents();
-}, 1000 * 60 * 1);
-
 client
   .login(config.BOT_TOKEN)
   .then(() => {
