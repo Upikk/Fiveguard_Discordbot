@@ -15,10 +15,6 @@ module.exports = {
         config.IN_GAME_PERMISSIONS.GUILD_ID
       );
 
-      ExecuteCommand("add_ace group.PermissionsBypass command allow");
-
-      ExecuteCommand(`add_principal resource.${res} group.PermissionsBypass`);
-
       Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
         const AllPermissions = config.IN_GAME_PERMISSIONS.PERMISSIONS[roleId];
         if (!g.roles.cache.has(roleId)) return;
