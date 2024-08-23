@@ -35,6 +35,7 @@ module.exports = {
         if (!g) return console.error("You put Wrong Guild ID in config.json!");
         const member = await g.members.cache.get(d);
         const memberRoles = member.roles.cache.map((role) => role.id);
+      Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
         if (memberRoles.includes(roleId)) {
           if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO)
             print(
@@ -49,6 +50,7 @@ module.exports = {
             )} group.DiscordBot${roleId}`
           );
         }
+       }) 
       });
     }
   },
