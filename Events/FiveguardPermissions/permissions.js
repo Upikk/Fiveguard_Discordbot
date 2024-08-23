@@ -35,22 +35,22 @@ module.exports = {
         if (!g) return console.error("You put Wrong Guild ID in config.json!");
         const member = await g.members.cache.get(d);
         const memberRoles = member.roles.cache.map((role) => role.id);
-      Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
-        if (memberRoles.includes(roleId)) {
-          if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO)
-            print(
-              `^3Permissions granted to player: ${GetPlayerName(
-                source
-              )} (${source})^0`
+        Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
+          if (memberRoles.includes(roleId)) {
+            if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO)
+              print(
+                `^3Permissions granted to player: ${GetPlayerName(
+                  source
+                )} (${source})^0`
+              );
+            ExecuteCommand(
+              `add_principal identifier.${GetPlayerIdentifier(
+                playerId,
+                0
+              )} group.DiscordBot${roleId}`
             );
-          ExecuteCommand(
-            `add_principal identifier.${GetPlayerIdentifier(
-              playerId,
-              0
-            )} group.DiscordBot${roleId}`
-          );
-        }
-       }) 
+          }
+        });
       });
     }
   },
