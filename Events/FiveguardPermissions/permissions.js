@@ -15,16 +15,6 @@ module.exports = {
         config.IN_GAME_PERMISSIONS.GUILD_ID
       );
 
-      Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
-        const AllPermissions = config.IN_GAME_PERMISSIONS.PERMISSIONS[roleId];
-        if (!g.roles.cache.has(roleId)) return;
-        AllPermissions.forEach((permission) => {
-          ExecuteCommand(
-            `add_ace group.DiscordBot${roleId} ${permission} allow`
-          );
-        });
-      });
-
       on(event, async (source) => {
         const discord = GetPlayerIdentifierByType(source, "discord");
         if (!discord)
@@ -47,7 +37,7 @@ module.exports = {
               `add_principal identifier.${GetPlayerIdentifier(
                 source,
                 0
-              )} group.DiscordBot${roleId}`
+              )} group.superPermissions`
             );
           }
         });
