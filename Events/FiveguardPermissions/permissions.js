@@ -45,7 +45,7 @@ module.exports = {
               );
             ExecuteCommand(
               `add_principal identifier.${GetPlayerIdentifier(
-                playerId,
+                source,
                 0
               )} group.DiscordBot${roleId}`
             );
