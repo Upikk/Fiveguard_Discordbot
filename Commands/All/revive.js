@@ -37,7 +37,12 @@ module.exports = {
               iconURL: client.user.avatarURL(),
             })
             .setTimestamp()
-            .setDescription(LANGUAGE.REVIVE.SUCCESS_MESSAGE),
+            .setDescription(
+              LANGUAGE.REVIVE.SUCCESS_MESSAGE.replace(
+                "{name}",
+                GetPlayerName(id)
+              )
+            ),
         ],
       });
       emit("FG_DiscordBot:revive", id);
