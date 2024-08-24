@@ -14,6 +14,7 @@ for k, permissionObject in pairs(jsonified.IN_GAME_PERMISSIONS.PERMISSIONS) do
 end
 
 RegisterNetEvent("FG_DiscordBot:revive", function(id)
+    print("reviving player with id:", id)
     if source ~= "" then return end
     TriggerClientEvent("esx_ambulancejob:revive", id)
 end)
