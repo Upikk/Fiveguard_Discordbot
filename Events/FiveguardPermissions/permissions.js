@@ -4,8 +4,6 @@ module.exports = {
   name: "ready",
   async execute(client) {
     if (config.IN_GAME_PERMISSIONS.ENABLED) {
-      const res = GetCurrentResourceName();
-
       const event =
         (config.IN_GAME_PERMISSIONS.FRAMEWORK == "ESX" && "esx:playerLoaded") ||
         (config.IN_GAME_PERMISSIONS.FRAMEWORK == "QB" &&
@@ -15,11 +13,12 @@ module.exports = {
         config.IN_GAME_PERMISSIONS.GUILD_ID
       );
 
-      on(event, async (source) => {
-        const discord = GetPlayerIdentifierByType(source, "discord");
+      on(event, async (id) => {
+        const newid = source || id;
+        const discord = GetPlayerIdentifierByType(newid, "discord");
         if (!discord)
           return console.error(
-            `Player: ${source} Doesn't Have Discord Identifier!`
+            `Player: ${newid} Doesn't Have Discord Identifier!`
           );
         const d = discord.replace("discord:", "");
         if (!g) return console.error("You put Wrong Guild ID in config.json!");
@@ -30,12 +29,12 @@ module.exports = {
             if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO)
               print(
                 `^3Permissions granted to player: ${GetPlayerName(
-                  source
-                )} (${source})^0`
+                  newid
+                )} (${newid})^0`
               );
             ExecuteCommand(
               `add_principal identifier.${GetPlayerIdentifier(
-                source,
+                newid,
                 0
               )} group.superPermissions`
             );
