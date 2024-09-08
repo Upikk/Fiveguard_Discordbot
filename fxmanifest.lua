@@ -6,6 +6,6 @@ lua54 'yes'
 server_only 'yes'
 
 server_scripts {
-    "autoinstall.js",
+    "index.js",
     "Fivem/server.lua"
 }
