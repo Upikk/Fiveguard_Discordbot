@@ -1,9 +1,9 @@
-Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban / Baninfo / Kick functions, i've also added fivem server status and /revive command
+![image](https://github.com/user-attachments/assets/f77eb829-e17f-4d8d-a78f-14ca9643b276)Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban / Baninfo / Kick functions, i've also added fivem server status and /revive command
 
 <b>If you'd like to buy custom bot (with commands that you want) you can dm me on discord: upik_</b>
 
 # Requirements
-- [yarn](https://2897568640-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FwNoQfmSrfSutIixeLn4V%2Fuploads%2FQiHYaJ71rKgXzDEiSwo9%2Fyarn.rar?alt=media&token=e0126714-6f4c-4def-a72e-3fad49e611ba) replaced innit
+- [yarn](https://2897568640-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FwNoQfmSrfSutIixeLn4V%2Fuploads%2FQiHYaJ71rKgXzDEiSwo9%2Fyarn.rar?alt=media&token=e0126714-6f4c-4def-a72e-3fad49e611ba) replaced innit (default path: resources/[cfx-default]/[system]/[builders]/yarn)
 
 # config.json:
 
