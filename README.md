@@ -5,6 +5,20 @@ Hello, i made discord bot with slash commands to work with FiveGuard Ban / Unban
 # Requirements
 - [yarn](https://2897568640-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FwNoQfmSrfSutIixeLn4V%2Fuploads%2FQiHYaJ71rKgXzDEiSwo9%2Fyarn.rar?alt=media&token=e0126714-6f4c-4def-a72e-3fad49e611ba) replaced innit (default path: resources/[cfx-default]/[system]/[builders]/yarn)
 
+# Why no work!? | Common Issues
+* Used disallowed intents
+  <br>
+  1 Go [here](https://discord.com/developers/applications).
+  <br>
+  2 Select your Application and click Bot category.
+  <br>
+  3 Turn on these three options
+  <br>
+  ![image](https://github.com/user-attachments/assets/d9f3a680-bf1d-43e3-a67f-4d05b21b9fa2)
+  <br>
+  4 Restart the Bot.
+
+
 # config.json:
 
 - Bot Token (token from discord.com/developers/applications)
