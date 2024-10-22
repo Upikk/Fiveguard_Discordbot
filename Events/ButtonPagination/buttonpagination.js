@@ -11,8 +11,6 @@ const { readFileSync } = require("fs");
 
 const { LANGUAGE, PERMISSIONS, FIVEGUARD_RESOURCE_NAME } = require("../../config.json");
 
-const bansjson = JSON.parse(readFileSync(`${GetResourcePath(FIVEGUARD_RESOURCE_NAME)}/bans.json`, { encoding: "utf8" }));
-
 module.exports = {
   name: "interactionCreate",
   /**
@@ -38,7 +36,7 @@ module.exports = {
     if (!interaction.isButton()) return;
 
     const { customId } = interaction;
-
+    const bansjson = JSON.parse(readFileSync(`${GetResourcePath(FIVEGUARD_RESOURCE_NAME)}/bans.json`, { encoding: "utf8" }));
     const page = client.UserBanLists.get(interaction.user.id);
     if (page == null) {
       return interaction.update({
