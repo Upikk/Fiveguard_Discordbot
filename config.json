@@ -3,7 +3,6 @@
   "FIVEGUARD_RESOURCE_NAME": "",
   "SERVER_STATUS": {
     "ON": false,
-    "SERVER_PORT": "30120",
     "MESSAGE": "<count> players on ExampleRP"
   },
   "AIMBOT_BANS": {
