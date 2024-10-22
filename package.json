@@ -1,5 +1,5 @@
 {
-  "version": "1.0.9",
+  "version": "1.0.10",
   "dependencies": {
     "discord.js": "^14.11.0"
   },
