@@ -1,4 +1,4 @@
 {
-  "version": "1.0.9",
-  "changelog": "Added automatic Aimbot Bans from Fiveguard Aimbot Log Channel"
+  "version": "1.0.10",
+  "changelog": "Fixed issues with banlist loading."
 }
