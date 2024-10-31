@@ -20,6 +20,7 @@ end)
 
 RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license)
     if source ~= "" then return end
+    print("ban license", license)
     local id = GetIDByLicense(license)
     exports[jsonified.FIVEGUARD_RESOURCE_NAME]:fg_BanPlayer(id, "Aimbot Detected", true)
 end)
