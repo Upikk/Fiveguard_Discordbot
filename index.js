@@ -23,7 +23,7 @@ if (
   console.log("PROVIDED RESOURCE NAME IS NOT A FIVEGUARD ANTICHEAT");
 
 const client = new Client({
-  intents: [259],
+  intents: [9216],
 });
 
 async function checkVer() {
