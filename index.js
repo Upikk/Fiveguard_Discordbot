@@ -1,4 +1,12 @@
-const { Client, Collection } = require("discord.js");
+const {
+  Client,
+  Partials,
+  Collection,
+  GatewayIntentBits,
+} = require("discord.js");
+const { User, Message, GuildMember, ThreadMember, Channel, Reaction } =
+  Partials;
+
 const config = require("./config.json");
 const fs = require("fs");
 const root = GetResourcePath(GetCurrentResourceName());
@@ -23,7 +31,12 @@ if (
   console.log("PROVIDED RESOURCE NAME IS NOT A FIVEGUARD ANTICHEAT");
 
 const client = new Client({
-  intents: [9216],
+  intents: [
+    32767,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.MessageContent,
+  ],
+  partials: [User, Message, GuildMember, ThreadMember, Channel, Reaction],
 });
 
 async function checkVer() {
@@ -62,7 +75,7 @@ client
     loadEvents(client);
     loadCommands(client);
     console.log(
-      "\n\nMade By upik_\n\n^3If you'd like to buy custom bot (with commands that you want) you can dm me on discord: upik_^7\n\nStarted Successfully\n\n"
+      "\n\nMade By upik_\n\n^3If you need help with the bot you can dm me on discord: upik_^7\n\nStarted Successfully\n\n"
     );
     checkVer();
   })
