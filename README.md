@@ -30,6 +30,7 @@ If you're looking for a feature-packed server management bot, you can check it o
   ![image](https://github.com/user-attachments/assets/d9f3a680-bf1d-43e3-a67f-4d05b21b9fa2)
   <br>
   4 Restart the Bot.
+  <br>
 * Slash commands doesn't show
   <br>
   Make sure you click CTRL + R on discord and commands should appear
