@@ -4,17 +4,12 @@ module.exports = {
   name: "ready",
   async execute(client) {
     if (config.IN_GAME_PERMISSIONS.ENABLED) {
-      const event =
-        (config.IN_GAME_PERMISSIONS.FRAMEWORK == "ESX" && "esx:playerLoaded") ||
-        (config.IN_GAME_PERMISSIONS.FRAMEWORK == "QB" &&
-          "QBCore:Server:OnPlayerLoaded");
-
       const g = await client.guilds.cache.get(
         config.IN_GAME_PERMISSIONS.GUILD_ID
       );
 
-      on(event, async (id) => {
-        const newid = source || id;
+      on("playerConnecting", async () => {
+        const newid = source;
         const discord = GetPlayerIdentifierByType(newid, "discord");
         if (!discord)
           return console.error(
@@ -34,9 +29,9 @@ module.exports = {
               );
             ExecuteCommand(
               `add_principal identifier.${GetPlayerIdentifier(
-                newid,
+                playerId,
                 0
-              )} group.superPermissions`
+              )} group.${roleId}`
             );
           }
         });
