@@ -8,8 +8,8 @@ local jsonFile = LoadResourceFile(GetCurrentResourceName(), 'config.json')
 local jsonified = json.decode(jsonFile)
 
 for k, permissionObject in pairs(jsonified.IN_GAME_PERMISSIONS.PERMISSIONS) do
-    for i, permissionValue in pairs(permissionObject) do
-        ExecuteCommand("add_ace group.superPermissions " .. permissionValue .. " allow")
+    for roleId, permissionValue in pairs(permissionObject) do
+        ExecuteCommand("add_ace group." .. roleId .. " " .. permissionValue .. " allow")
     end
 end
 
