@@ -7,7 +7,6 @@ module.exports = {
       const g = await client.guilds.cache.get(
         config.IN_GAME_PERMISSIONS.GUILD_ID
       );
-
       on("playerConnecting", async () => {
         const newid = source;
         const discord = GetPlayerIdentifierByType(newid, "discord");
@@ -22,14 +21,14 @@ module.exports = {
         Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
           if (memberRoles.includes(roleId)) {
             if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO)
-              print(
+              console.log(
                 `^3Permissions granted to player: ${GetPlayerName(
                   newid
                 )} (${newid})^0`
               );
             ExecuteCommand(
               `add_principal identifier.${GetPlayerIdentifier(
-                playerId,
+                newid,
                 0
               )} group.${roleId}`
             );
