@@ -96,8 +96,7 @@
   },
   "IN_GAME_PERMISSIONS": {
     "ENABLED": false,
-    "SHOW_LOADED_INFO": false,
-    "FRAMEWORK": "ESX",
+    "SHOW_LOADED_INFO": true,
     "GUILD_ID": "1111111111111111111",
     "PERMISSIONS": {
       "111111111111111111": [
