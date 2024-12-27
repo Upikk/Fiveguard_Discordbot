@@ -15,9 +15,6 @@ If you're looking for a feature-packed server management bot, you can check it o
 
 <b>If you need help with the bot you can open a ticket [here](https://discord.gg/yXBAPzRpz8)</b>
 
-# Requirements
-- [yarn](https://2897568640-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FwNoQfmSrfSutIixeLn4V%2Fuploads%2FQiHYaJ71rKgXzDEiSwo9%2Fyarn.rar?alt=media&token=e0126714-6f4c-4def-a72e-3fad49e611ba) replaced innit (default path: resources/[cfx-default]/[system]/[builders]/yarn)
-
 # Why no work!? | Common Issues
 * Used disallowed intents
   <br>
