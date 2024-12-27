@@ -7,8 +7,8 @@ ExecuteCommand("add_principal resource." .. res .. " group.PermissionsBypass");
 local jsonFile = LoadResourceFile(GetCurrentResourceName(), 'config.json')
 local jsonified = json.decode(jsonFile)
 
-for k, permissionObject in pairs(jsonified.IN_GAME_PERMISSIONS.PERMISSIONS) do
-    for roleId, permissionValue in pairs(permissionObject) do
+for roleId, permissionObject in pairs(jsonified.IN_GAME_PERMISSIONS.PERMISSIONS) do
+    for index, permissionValue in pairs(permissionObject) do
         ExecuteCommand("add_ace group." .. roleId .. " " .. permissionValue .. " allow")
     end
 end
