@@ -18,11 +18,22 @@ RegisterNetEvent("FG_DiscordBot:revive", function(id)
     TriggerClientEvent("esx_ambulancejob:revive", id)
 end)
 
+
+function GetFiveguardResourceName()
+    for i = 0, GetNumResources() - 1 do
+        if LoadResourceFile(GetResourceByFindIndex(i), 'sv-resource-obfuscated.lua') then
+            return GetResourceByFindIndex(i)
+        end
+    end
+end
+
+local fg = GetFiveguardResourceName()
+
 RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license)
     if source ~= "" then return end
     print("ban license", license)
     local id = GetIDByLicense(license)
-    exports[jsonified.FIVEGUARD_RESOURCE_NAME]:fg_BanPlayer(id, "Aimbot Detected", true)
+    exports[fg]:fg_BanPlayer(id, "Aimbot Detected", true)
 end)
 
 function GetIDByLicense(license)

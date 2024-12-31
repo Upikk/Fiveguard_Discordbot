@@ -31,10 +31,6 @@ If you're looking for a feature-packed server management bot, you can check it o
 * Slash commands doesn't show
   <br>
   Make sure you click CTRL + R on discord and commands should appear
-  <br>
-* Permissions ain't applying
-  <br>
-  You have to turn off Alternative Permissions in Fiveguard Config
 
 
 # config.json:

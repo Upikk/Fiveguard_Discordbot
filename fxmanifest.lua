@@ -1,7 +1,7 @@
 fx_version 'adamant'
 games { "gta5" }
 author "Upikk"
-description "To purchase Custom Bot, you can dm me on discord: upik_"
+description "Discord Bot with Slash Commands to work with FiveGuard Systems."
 lua54 'yes'
 server_only 'yes'
 

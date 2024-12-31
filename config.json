@@ -1,6 +1,5 @@
 {
   "BOT_TOKEN": "",
-  "FIVEGUARD_RESOURCE_NAME": "",
   "SERVER_STATUS": {
     "ON": false,
     "MESSAGE": "<count> players on ExampleRP"
@@ -96,8 +95,8 @@
   },
   "IN_GAME_PERMISSIONS": {
     "ENABLED": false,
-    "SHOW_LOADED_INFO": true,
-    "GUILD_ID": "1111111111111111111",
+    "SHOW_LOADED_INFO": false,
+    "GUILD_ID": "",
     "PERMISSIONS": {
       "111111111111111111": [
         "AdminMenuAccess",

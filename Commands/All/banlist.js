@@ -8,7 +8,7 @@ const {
 
 const { readFileSync } = require("fs");
 
-const { LANGUAGE, PERMISSIONS, FIVEGUARD_RESOURCE_NAME } = require("../../config.json");
+const { LANGUAGE, PERMISSIONS } = require("../../config.json");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -28,7 +28,11 @@ module.exports = {
         ],
       });
     }
-    const bansjson = JSON.parse(readFileSync(`${GetResourcePath(FIVEGUARD_RESOURCE_NAME)}/bans.json`, { encoding: "utf8" }));
+    const bansjson = JSON.parse(
+      readFileSync(`${GetResourcePath(client.fgName)}/bans.json`, {
+        encoding: "utf8",
+      })
+    );
     const FirstBanID = Object.keys(bansjson)[0];
     const BanData = bansjson[FirstBanID];
     const embed = new EmbedBuilder()

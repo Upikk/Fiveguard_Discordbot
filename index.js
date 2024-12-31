@@ -1,3 +1,5 @@
+process.emitWarning = () => {};
+
 const {
   Client,
   Partials,
@@ -8,25 +10,13 @@ const { User, Message, GuildMember, ThreadMember, Channel, Reaction } =
   Partials;
 
 const config = require("./config.json");
-const fs = require("fs");
 const root = GetResourcePath(GetCurrentResourceName());
 
-const fg = exports[config.FIVEGUARD_RESOURCE_NAME];
+const fgName = GetFiveguardResourceName();
+
+const fg = exports[fgName];
 
 if (config.BOT_TOKEN == "") console.log("YOU'RE MISSING BOT TOKEN");
-if (config.FIVEGUARD_RESOURCE_NAME == "")
-  console.log("YOU'RE MISSING FIVEGUARD RESOURCE NAME");
-if (!GetResourcePath(config.FIVEGUARD_RESOURCE_NAME))
-  console.log("YOU PROVIDED WRONG FIVEGUARD RESOURCE NAME");
-
-if (
-  !fs.existsSync(
-    `${GetResourcePath(
-      config.FIVEGUARD_RESOURCE_NAME
-    )}/ai_module_fg-obfuscated.lua`
-  )
-)
-  console.log("PROVIDED RESOURCE NAME IS NOT A FIVEGUARD ANTICHEAT");
 
 const client = new Client({
   intents: [
@@ -44,6 +34,7 @@ client.fg = fg;
 client.commands = new Collection();
 client.events = new Collection();
 client.UserBanLists = new Map();
+client.fiveguardName = fgName;
 
 client
   .login(config.BOT_TOKEN)
@@ -57,3 +48,13 @@ client
   .catch((err) => {
     console.error(err);
   });
+
+function GetFiveguardResourceName() {
+  for (let i = 0; i < GetNumResources(); i++) {
+    if (
+      LoadResourceFile(GetResourceByFindIndex(i), "sv-resource-obfuscated.lua")
+    ) {
+      return GetResourceByFindIndex(i);
+    }
+  }
+}
