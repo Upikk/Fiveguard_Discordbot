@@ -29,7 +29,7 @@ module.exports = {
       });
     }
     const bansjson = JSON.parse(
-      readFileSync(`${GetResourcePath(client.fgName)}/bans.json`, {
+      readFileSync(`${GetResourcePath(client.fiveguardName)}/bans.json`, {
         encoding: "utf8",
       })
     );
