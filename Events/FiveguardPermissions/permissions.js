@@ -21,19 +21,23 @@ module.exports = {
         const memberRoles = member.roles.cache.map((role) => role.id);
         Object.keys(config.IN_GAME_PERMISSIONS.PERMISSIONS).some((roleId) => {
           if (memberRoles.includes(roleId)) {
-            if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO)
+            if (config.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO) {
               console.log(
                 `^3Permissions granted to player: ${GetPlayerName(
                   newid
                 )} (${newid})^0`
               );
+            }
             ExecuteCommand(
               `add_principal identifier.${GetPlayerIdentifier(
                 newid,
                 0
               )} group.${roleId}`
             );
+
+            return true;
           }
+          return false;
         });
       });
     }
