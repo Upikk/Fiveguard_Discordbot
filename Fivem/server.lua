@@ -27,13 +27,11 @@ function GetFiveguardResourceName()
     end
 end
 
-local fg = GetFiveguardResourceName()
-
 RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license)
     if source ~= "" then return end
     print("ban license", license)
     local id = GetIDByLicense(license)
-    exports[fg]:fg_BanPlayer(id, "Aimbot Detected", true)
+    exports[jsonified.FIVEGUARD_RESOURCE_NAME]:fg_BanPlayer(id, "Aimbot Detected", true)
 end)
 
 function GetIDByLicense(license)
