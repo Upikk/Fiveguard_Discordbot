@@ -14,9 +14,10 @@ const root = GetResourcePath(GetCurrentResourceName());
 
 const fgName = config.FIVEGUARD_RESOURCE_NAME
 
-const fg = exports[fgName];
-
 if (config.BOT_TOKEN == "") console.log("YOU'RE MISSING BOT TOKEN");
+if (fgName == "") console.log("YOU HAVE TO PROVIDE A FIVEGUARD RESOURCE NAME in the config.json FILE");
+
+const fg = exports[fgName];
 
 const client = new Client({
   intents: [
