@@ -18,15 +18,6 @@ RegisterNetEvent("FG_DiscordBot:revive", function(id)
     TriggerClientEvent("esx_ambulancejob:revive", id)
 end)
 
-
-function GetFiveguardResourceName()
-    for i = 0, GetNumResources() - 1 do
-        if LoadResourceFile(GetResourceByFindIndex(i), 'sv-resource-obfuscated.lua') then
-            return GetResourceByFindIndex(i)
-        end
-    end
-end
-
 RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license)
     if source ~= "" then return end
     print("ban license", license)
