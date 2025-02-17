@@ -1,5 +1,6 @@
 {
   "BOT_TOKEN": "",
+  "FIVEGUARD_RESOURCE_NAME": "",
   "SERVER_STATUS": {
     "ON": false,
     "MESSAGE": "<count> players on ExampleRP"
