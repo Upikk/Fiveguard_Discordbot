@@ -12,7 +12,7 @@ const { User, Message, GuildMember, ThreadMember, Channel, Reaction } =
 const config = require("./config.json");
 const root = GetResourcePath(GetCurrentResourceName());
 
-const fgName = GetFiveguardResourceName();
+const fgName = config.FIVEGUARD_RESOURCE_NAME
 
 const fg = exports[fgName];
 
@@ -48,13 +48,3 @@ client
   .catch((err) => {
     console.error(err);
   });
-
-function GetFiveguardResourceName() {
-  for (let i = 0; i < GetNumResources(); i++) {
-    if (
-      LoadResourceFile(GetResourceByFindIndex(i), "sv-resource-obfuscated.lua")
-    ) {
-      return GetResourceByFindIndex(i);
-    }
-  }
-}
