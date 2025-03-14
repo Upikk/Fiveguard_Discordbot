@@ -1,6 +1,6 @@
 Hello, i made discord bot with slash commands to work with FiveGuard Systems.
 
-If you're looking for a feature-packed server management bot, you can check it out [here](https://upikk.tebex.io/package/6578011)!
+If you're looking for a feature-packed server management bot, you can check it out [here](https://upikk.tebex.io/category/2187266)!
 
 # Functions
 - Ban
