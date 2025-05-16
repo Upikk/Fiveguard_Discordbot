@@ -18,11 +18,11 @@ RegisterNetEvent("FG_DiscordBot:revive", function(id)
     TriggerClientEvent("esx_ambulancejob:revive", id)
 end)
 
-RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license)
+RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license, reason)
     if source ~= "" then return end
     print("ban license", license)
     local id = GetIDByLicense(license)
-    exports[jsonified.FIVEGUARD_RESOURCE_NAME]:fg_BanPlayer(id, "Aimbot Detected", true)
+    exports[jsonified.FIVEGUARD_RESOURCE_NAME]:fg_BanPlayer(id, "[AUTO-BAN] " .. reason, true)
 end)
 
 function GetIDByLicense(license)
