@@ -5,10 +5,18 @@
     "ON": false,
     "MESSAGE": "<count> players on ExampleRP"
   },
-  "AIMBOT_BANS": {
-    "ENABLED": false,
-    "AIMBOT_LOGS_CHANNEL": "111111111111111111"
+
+  "AUTO_BANS": {
+    "AIMBOT": {
+      "ENABLED": false,
+      "AIMBOT_LOGS_CHANNEL": "111111111111111111"
+    },
+    "ENTITY": {
+      "ENABLED": false,
+      "ENTITY_LOGS_CHANNEL": "111111111111111111"
+    }
   },
+
   "PERMISSIONS": {
     "BAN": ["111111111111111111", "222222222222222222"],
     "BANINFO": ["111111111111111111", "222222222222222222"],
