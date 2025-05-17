@@ -17,7 +17,7 @@ module.exports = {
     )
       return;
 
-    if (message.embeds[0]?.fields[1]?.value.includes("Aimbot")) {
+    if (message.embeds[0]?.fields[1]?.value.includes("Aimbot") || message.embeds[0]?.fields[1]?.value.includes("Silent Aim")) {
       const PlayerLicense = message.embeds[0].fields[5].value;
 
       if (!PlayerLicense) return;
