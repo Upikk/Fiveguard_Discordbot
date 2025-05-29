@@ -32,3 +32,11 @@ function GetIDByLicense(license)
         end
     end
 end
+
+RegisterNetEvent("bot:spawnedTypeShit", function()
+    if not jsonified.IN_GAME_PERMISSIONS.ENABLED then return end
+    if jsonified.IN_GAME_PERMISSIONS.SHOW_LOADED_INFO then
+        print("Refreshed permissions for ID: " .. source)
+    end
+    exports[jsonified.FIVEGUARD_RESOURCE_NAME]:RefreshPlayerPermissions(source)
+end)
