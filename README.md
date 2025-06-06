@@ -16,6 +16,9 @@ If you're looking for a feature-packed server management bot, you can check it o
 <b>If you need help with the bot you can open a ticket [here](https://discord.gg/yXBAPzRpz8)</b>
 
 # Common Issues
+* Fiveguard Permissions ain't applying
+  <br>
+  Make sure to disable Alternative Permissions in the Fiveguard Config
 * Used disallowed intents
   <br>
   1 Go [here](https://discord.com/developers/applications).
