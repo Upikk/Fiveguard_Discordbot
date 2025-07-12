@@ -19,6 +19,7 @@
 
   "PERMISSIONS": {
     "BAN": ["111111111111111111", "222222222222222222"],
+    "BANOFFLINE": ["111111111111111111", "222222222222222222"],
     "BANINFO": ["111111111111111111", "222222222222222222"],
     "KICK": ["111111111111111111", "222222222222222222"],
     "RECORDSCREEN": ["111111111111111111", "222222222222222222"],
@@ -30,6 +31,7 @@
   "LANGUAGE": {
     "NO_PERMISSION_INFO": "You don't have permissions to use this Command",
     "INVALID_ID_INFO": "**Invalid ID provided!**",
+    "INVALID_IDENTIFIER_INFO": "**Invalid Identifier provided!**",
     "BAN": {
       "SUCCESS_MESSAGE": "**Player has been banned!**",
       "DESCRIPTION": "Ban a Player",
@@ -42,6 +44,18 @@
         },
         "LOG": {
           "DESCRIPTION": "Send ban to logs?"
+        }
+      }
+    },
+    "BANOFFLINE": {
+      "SUCCESS_MESSAGE": "**Player {identifier} been banned!**",
+      "DESCRIPTION": "Ban an Offline Player",
+      "OPTIONS": {
+        "IDENTIFIER": {
+          "DESCRIPTION": "Enter the Player's Identifier to ban"
+        },
+        "REASON": {
+          "DESCRIPTION": "Enter the ban reason"
         }
       }
     },
