@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 const { PERMISSIONS, LANGUAGE } = require("../../config.json");
 
-const identifierPrefixes = ["license:", "steam:", "ip:"];
+const identifierPrefixes = ["license:", "steam:", "ip:", "discord:"];
 
 function ValidateIdentifier(identifier) {
   return identifierPrefixes.some((prefix) => identifier.startsWith(prefix));
