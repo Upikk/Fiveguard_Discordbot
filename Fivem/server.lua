@@ -13,9 +13,31 @@ for roleId, permissionObject in pairs(jsonified.IN_GAME_PERMISSIONS.PERMISSIONS)
     end
 end
 
-RegisterNetEvent("FG_DiscordBot:revive", function(id)
+---@param license string
+---@return string | nil
+function GetIDByLicense(license)
+    for index, id in pairs(GetPlayers()) do
+        if GetPlayerIdentifierByType(id, "license") == license then
+            return id
+        end
+    end
+end
+
+---@param targetId number
+---@return nil
+function revive(targetId)
+    if GetResourceState('es_extended') == 'started' then 
+        TriggerClientEvent("esx_ambulancejob:revive", targetId)
+    elseif GetResourceState('qb_core') == 'started' then 
+        TriggerClientEvent("hospital:client:Revive", targetId)
+    else
+         error('No supported framework founded (es_extended or qb_core)')
+    end
+end
+
+RegisterNetEvent("FG_DiscordBot:revive", function(targetId)
     if source ~= "" then return end
-    TriggerClientEvent("esx_ambulancejob:revive", id)
+        revive(targetId)
 end)
 
 RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license, reason)
@@ -24,14 +46,6 @@ RegisterNetEvent("FG_DiscordBot:BanPlayerLicense", function(license, reason)
     local id = GetIDByLicense(license)
     exports[jsonified.FIVEGUARD_RESOURCE_NAME]:fg_BanPlayer(id, "[AUTO-BAN] " .. reason, true)
 end)
-
-function GetIDByLicense(license)
-    for index, id in pairs(GetPlayers()) do
-        if GetPlayerIdentifierByType(id, "license") == license then
-            return id
-        end
-    end
-end
 
 RegisterNetEvent("bot:spawnedTypeShit", function()
     if not jsonified.IN_GAME_PERMISSIONS.ENABLED then return end
