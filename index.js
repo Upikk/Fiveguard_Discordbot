@@ -43,9 +43,10 @@ client
     loadEvents(client);
     loadCommands(client);
     console.log(
-      "\n\nMade By upik_\n\n^3If you need help with the bot you can open a ticket here: https://discord.gg/upikk^7\n\nStarted Successfully\n\n^3If you're looking for a feature-packed server management bot, you can check it out here: https://upikk.tebex.io/category/2187266!\n\n^7"
+      "\n\nMade By upik_\n\n^3If you need help with the bot you can open a ticket here: https://discord.gg/ReBqyG2BKh^7\n\nStarted Successfully\n\n^3If you're looking for a feature-packed server management bot, you can check it out here: https://upikk.tebex.io/category/2187266!\n\n^7"
     );
   })
   .catch((err) => {
     console.error(err);
   });
+
