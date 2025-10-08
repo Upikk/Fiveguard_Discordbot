@@ -34,6 +34,13 @@ If you're looking for a feature-packed server management bot, you can check it o
 * Slash commands doesn't show
   <br>
   Make sure you click CTRL + R on discord and commands should appear
+* Fiveguard Permissions aren't applying to players
+  <br>
+  Make sure to add these lines in your server.cfg file
+  ```
+  add_ace resource.Fiveguard_Discordbot command.add_principal allow
+  add_ace resource.Fiveguard_Discordbot command.add_ace allow
+  ```
 
 
 # config.json:
@@ -60,3 +67,4 @@ if you want to use in game permissions, put your discord role id here:
 if you want to add another role that has (for example) only access to : BypassNoclip, BypassThermalVision, BypassOCR, BypassNuiDevtools do this:
 
 ![image](https://github.com/Upikk/Fiveguard_Discordbot/assets/96323919/2c81513f-e593-47b5-a760-819db1fff203)
+
