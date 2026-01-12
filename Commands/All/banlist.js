@@ -33,6 +33,9 @@ module.exports = {
         encoding: "utf8",
       })
     );
+
+    if (Object.keys(obj).length == 0) return interaction.reply("no one is banned!");
+    
     const FirstBanID = Object.keys(bansjson)[0];
     const BanData = bansjson[FirstBanID];
     const embed = new EmbedBuilder()
@@ -61,3 +64,4 @@ module.exports = {
     await interaction.reply({ embeds: [embed], components: [aR] });
   },
 };
+
